@@ -1,0 +1,17 @@
+{
+  "name": "ys-micro",
+  "version": "1.0.4",
+  "description": "micro base on net.socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=dev node test/index.js",
+    "client": "node test/client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:yskit/ys-micro.git"
+  },
+  "dependencies": {
+    "koa-compose": "^4.0.0"
+  }
+}

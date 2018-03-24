@@ -32,6 +32,8 @@ module.exports = class MicroService extends EventEmitter {
 
     const handleRequest = socket => {
       socket.on('data', buffer => {
+        const header = (buffer + '').split('\n')[0];
+        if (/HTTP\/(\d+)\.(\d+)/.test(header) || buffer.indexOf('{') !== 0) return;
         const result = this.decode(buffer);
         if (!result.url) {
           return socket.write(this.encode({
